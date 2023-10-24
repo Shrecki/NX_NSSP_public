@@ -2,3 +2,4 @@
 *nii.gz
 */.ipynb_checkpoints/*
 Week*/__pycache__/
+.DS_Store
