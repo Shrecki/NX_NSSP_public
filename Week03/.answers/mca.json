@@ -1,0 +1,82 @@
+[
+    {
+        "question": "Which type volume should we use to perform fMRI motion-correction?",
+        "options": {
+            "Choosing as reference a volume of the fMRI timeserie": [
+                true,
+                "Indeed, this is what is typically done in practice."
+            ],
+            "Averaging the fMRI timeserie and using the mean volume as reference": [
+                true,
+                "This can also be done, in general to avoid the issue of choice of a given volume in the time-serie, although the difference in quality is often negligible compared to using a volume instead of the average."
+            ],
+            "Choosing as reference an anatomical volume, preferably of T1 contrast": [
+                false,
+                "To correct within a modality, this is a bad idea due to the difference in resolution and contrast between BOLD and T1."
+            ],
+            "Choosing as reference an fMRI standard space volume, derived from a cohort of participants": [
+                false,
+                "While this sounds reasonable, deriving and mapping to an average fMRI brain is tricky, given the resolution."
+            ]
+        },
+        "multi-choice": true
+    },
+    {
+        "question": "Which volume im the fMRI timeserie CAN we use to perform motion-correction?",
+        "options": {
+            "The first volume of the timeserie": [
+                false,
+                "In older acquisitions, MRI field needed time to stabilize, leading to contrast differences in the first few volumes which had to be thrown away. While recent systems automatically discard these volumes, we usually avoid them still, as participants are stiffer at the start of a recording."
+            ],
+            "The last volume of the timeserie": [
+                false,
+                "In general participants might move at the end of an acquisition, by getting impatient. Avoid these volumes as references."
+            ],
+            "The middle volume of the timeserie": [
+                true,
+                "We typically employ the middle volume, as participants tend to be settled in the acquisition and the field is stable."
+            ],
+            "Any volume such that the BOLD had the time to settle down": [
+                true,
+                "Indeed, we could employ in fact any volume, provided the field is stable and the participant is unlikely to move too much."
+            ]
+        },
+        "multi-choice": true
+    },
+    {
+        "question": "Now, we have an EPI, here of 364 volumes, each supposedly aligned by motion-correction. How many times should we compute the transformation?",
+        "options": {
+            "364 times, once for each volume": [
+                false,
+                "Remember, we want to move from the space of the EPI to the anatomical. We have transformed all volumes in the EPI timeserie to coregister them to a common (EPI) reference. We now want to move to the space of the T1 (the anatomical). We ask how many times we compute a new transformation, not how many times we apply it."
+            ],
+            "Once, selecting any volume from the EPI": [
+                true,
+                "This is because we only need to compute T1 to EPI transformation. All EPI volumes are coregistered to each other through mcflirt, so we should use specifically the middle EPI volume of mcflirt as EPI to coregister to the anatomical."
+            ]
+        },
+        "multi-choice": false
+    },
+    {
+        "question": "In your opinion, in a single *voxel* how many orientations can we have?",
+        "options": {
+            "Exactly one, since only one fiber is passing through the voxel": [
+                false,
+                "There are more fibers going through one voxel than a single fiber."
+            ],
+            "One, as the orientation describes the voxel's orientation, not the fibers going through the voxel": [
+                false,
+                "The orientation describes the fiber's orientation."
+            ],
+            "26, since there are 26 neighbouring voxels with which a link is possible": [
+                false,
+                "The orientation is the measured angle of the fiber, it does not have to be aligned to the voxel grid."
+            ],
+            "As many orientations as there are fibers going through the voxel": [
+                true,
+                "In theory, you can have all possible orientations because in a voxel, there are multiple fibers that can pass through. These orientations do not have to precisely align with the voxel grid since the fibers exist at a spatial resolution finer than that of voxels."
+            ]
+        },
+        "multi-choice": false
+    }
+]
