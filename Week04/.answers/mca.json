@@ -84,5 +84,27 @@
             ]
         },
         "multi-choice": false
+    },
+    {
+        "question": "What is the shape of the dataset (number of fNIRs channels, timepoints)?",
+        "options": {
+            "(56, 23239)": [
+              true,
+              "Indeed. Regarding the number of points, note that 23239 x 7.81 Hz gives a little more than 49 minutes and 35 seconds."
+            ],
+            "(17, 98888)": [
+                false,
+                "Not quite."
+            ],
+            "(56, 78889)": [
+                false,
+                "Look at the number of time points."
+            ],
+            "(17, 23239)": [
+                false,
+                "Your channels are wrong."
+            ]
+        },
+        "multi-choice": false
     }
 ]

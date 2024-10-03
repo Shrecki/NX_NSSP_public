@@ -121,6 +121,12 @@ class FSLeyesServer:
             self.overlayList.append(trk_overlay)
         else:
             self.overlayList.append(Image(image_path))
+    def close(self):
+        """
+        Closes the server and free up resources.
+        """
+        self.frame.Close()
+        fsleyes.shutdown()
 
 def fsleyes_thread():
     """
