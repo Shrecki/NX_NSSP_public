@@ -68,8 +68,8 @@ class FSLeyesServer:
     to enable GUI integration.
     """
     def __init__(self):
-    	import fsleyes
-    	from fsleyes.views.orthopanel import OrthoPanel
+        import fsleyes
+        from fsleyes.views.orthopanel import OrthoPanel
         overlayList, displayCtx, frame = fsleyes.embed()
         ortho = frame.addViewPanel(OrthoPanel)
         self.overlayList = overlayList
