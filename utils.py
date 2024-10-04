@@ -40,11 +40,6 @@ def mkdir_no_exist(path):
     if not op.isdir(path):
         os.makedirs(path)
 
-import fsleyes
-from fsleyes.views.orthopanel import OrthoPanel
-from fsl.data.image import Image
-import fsleyes.data.tractogram as trk
-
 class FSLeyesServer:
     """
     An FSL eyes class to manipulate frame and context across notebook.
@@ -72,6 +67,10 @@ class FSLeyesServer:
     Before initializing this class, always make sure you call %gui wx in a cell of the notebook
     to enable GUI integration.
     """
+    import fsleyes
+    from fsleyes.views.orthopanel import OrthoPanel
+    from fsl.data.image import Image
+    import fsleyes.data.tractogram as trk
     def __init__(self):
         overlayList, displayCtx, frame = fsleyes.embed()
         ortho = frame.addViewPanel(OrthoPanel)
