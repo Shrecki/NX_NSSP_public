@@ -67,11 +67,9 @@ class FSLeyesServer:
     Before initializing this class, always make sure you call %gui wx in a cell of the notebook
     to enable GUI integration.
     """
-    import fsleyes
-    from fsleyes.views.orthopanel import OrthoPanel
-    from fsl.data.image import Image
-    import fsleyes.data.tractogram as trk
     def __init__(self):
+    	import fsleyes
+    	from fsleyes.views.orthopanel import OrthoPanel
         overlayList, displayCtx, frame = fsleyes.embed()
         ortho = frame.addViewPanel(OrthoPanel)
         self.overlayList = overlayList
@@ -91,6 +89,8 @@ class FSLeyesServer:
         """
         Remove all overlays from the current frame
         """
+        from fsleyes.views.orthopanel import OrthoPanel
+    
         while len(self.overlayList) > 0:
             del self.overlayList[0]
 
@@ -115,6 +115,8 @@ class FSLeyesServer:
         >>>> fsleyesDisplay.load(op.expandvars('$FSLDIR/data/standard/MNI152_T1_0.5mm'))
         >>>> fsleyesDisplay.show()
         """
+        from fsl.data.image import Image
+        import fsleyes.data.tractogram as trk
         if ".trk" in image_path:
             trk_overlay = trk.Tractogram(image_path)
             self.overlayList.append(trk_overlay)
@@ -124,6 +126,8 @@ class FSLeyesServer:
         """
         Closes the server and free up resources.
         """
+        import fsleyes
+    
         self.frame.Close()
         fsleyes.shutdown()
 
