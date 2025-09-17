@@ -1,0 +1,118 @@
+[
+    {
+      "question": "Based on the JSON above, are you able to find...",
+      "options": {
+            "TR": [
+                true,
+                "Check the repetition time (in seconds), which is what TR (Time of Repetition) stands for: 1.5s"
+            ],
+            "Modality of acquisition?": [
+                true,
+                "We can read it typically in several fields, the series description, but more importantly the scanning sequence! EP, for echo planar!"
+            ],
+            "How many Teslas the scanner was using?": [
+                true,
+                "Check the field MagneticFieldStrength (in Tesla): 3 Teslas"
+            ],
+            "The weight of the participant?": [
+                false,
+                "Participant information is not recorded, to ensure anonymization. You also will not find any information on task structure here."
+            ]
+        },
+        "multi-choice": true
+    },
+    {
+        "question": "Select all which apply",
+        "options": {
+            "Tissues high in fat are bright in T1 contrast, which is why white matter is brighter than grey matter": [
+                true,
+                "Correct! Remember: fat appears bright in T1, water appears dark. White matter crucially contains myelin, which is absent from grey matter and thus white matter contains more fat than grey matter."
+            ],
+            "Tissues high in fibers are bright in T1 contrast, which is why white matter is brighter than grey matter": [
+                false,
+                "Incorrect!"
+            ],
+            "None of the above": [
+                false,
+                "Incorrect!"
+            ]
+        },
+        "multi-choice": false
+    },
+    {
+        "question": "",
+        "options": {
+            "Region 1 is likely high in fibers and might be tendons and ligaments, which are dense connective tissues full of fibers.": [
+                false,
+                "Nope"
+            ],
+            "Region 1 is likely high in fat, and is probably subcutaneous fat.": [
+                true,
+                "Indeed"
+            ],
+            "None of the above": [
+                false,
+                ""
+            ]
+        },
+        "multi-choice": false
+    },
+    {
+        "question": "",
+        "options": {
+            "Region 2 contains a mix of fat and water, hence the slightly darker color. Given its location, it is probably bone marrow.": [
+                false,
+                "Incorrect! We can make out the skull around the brain. Note that while it is greyer, it does not imply that it is a mixture of fat and water. It simply means that its relaxation time is *slower* that fat, but higher than water."
+            ],
+            "Region 2 contains a mix of fibers and water, hence the slightly darker color. It may be dura mater, connective tissues of the meninges.": [
+                false,
+                "Incorrect! The dura mater is in fact visible just outside the brain."
+            ],
+            "None of the above": [
+                true,
+                "Correct."
+            ]
+        },
+        "multi-choice": false
+    },
+    {
+        "question": "",
+        "options": {
+            "Region 3 contains air, which is why we do not see it in T1.": [
+                false,
+                "Incorrect! Neurons exposed to the air directly would be in a bit of a dangerous situation."
+            ],
+            "Region 3 contains mostly water, which appears dark in T1.": [
+                true,
+                "Correct! This liquid is in fact called cerebro-spinal fluid (CSF) and is essential to a healthy brain."
+            ],
+            "None of the above": [
+                false,
+                "Incorrect!"
+            ]
+        },
+        "multi-choice": false
+    },
+    {
+        "question": "",
+        "options": {
+            "pve_0 is white matter, pve_1 is grey matter, pve_2 is CSF": [
+                false,
+                "This is wrong. Look at the ventricles, which appear in red: clearly, they are not containing white matter but CSF."
+            ],
+            "pve_0 is grey matter, pve_1 is white matter, pve_2 is CSF": [
+                false,
+                "Again, look at pve_0, it is still wrong."
+            ],
+            "pve_0 is CSF, pve_1 is white matter, pve_2 is grey matter": [
+                false,
+                "The pve_0 is indeed the CSF, but look at pve_2 in blue. The white matter is a bundle of fibers. Look in the coronal view (the one on the left) and look for the corpus callosum. This is white matter."
+            ],
+            "pve_0 is CSF, pve_1 is grey matter, pve_2 is white matter": [
+                true,
+                "An easy way to remember this is to think about an onion in layers. You start from the outer and count every layer until the heart of the onion. For the brain, you start with the CSF, then the cortex (grey matter) and finally the fibers (white matter)."
+            ]
+        },
+        "multi-choice": false
+    }
+]
