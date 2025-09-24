@@ -52,7 +52,7 @@
             ],
             "Once, selecting any volume from the EPI": [
                 true,
-                "This is because we only need to compute T1 to EPI transformation. All EPI volumes are coregistered to each other through mcflirt, so we should use specifically the middle EPI volume of mcflirt as EPI to coregister to the anatomical."
+                "This is because we only need to compute EPI to T1 transformation. All EPI volumes are coregistered to each other through mcflirt, so we should use specifically the middle EPI volume of mcflirt as EPI to coregister to the anatomical."
             ]
         },
         "multi-choice": false
