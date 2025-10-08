@@ -1,0 +1,65 @@
+[
+    {
+        "question": "What is true?",
+        "options": {
+            " u contains variability due to the different surgery teams, while β has one component per surgery.": [
+                true,
+                "Correct! We are considering the surgery teams as a random effect and the surgery as fixed effect"
+            ],
+            " u will contain the variability due to the surgery, while β has one component per surgery team.": [
+                false,
+                "Incorrect! Think more about the type of variability that X and Z explain..."
+            ]
+        },
+        "multi-choice": false
+    },
+    {
+        "question": "Now, if we look at our β, it should be",
+        "options": {
+            "A matrix in the present case":[
+                false,
+                "Nope! it must have the same dimension of the associated fixed effect"
+            ],
+            "A vector": [
+                false,
+                "Nope! it must have the same dimension of the associated fixed effect"
+            ],
+            "A scalar":[ 
+                true,
+                "Fixed effect is time, given as a scalar, to obtain a scalar quantity: β must be scalar as well"
+            ]
+        },
+        "multi-choice": false
+    },
+    {
+        "question": "Which do you think would be *valid* design matrices (not necessarily *good*) for the fixed effect matrix X in this case?",
+        "options": {
+            "A": [
+                false,
+                "My design matrix has more trials than my observations. This cannot be!"
+            ],
+            "B": [
+                true,
+                "Yes, it is indeed a good design as we are currently accounting for all possible conditions of light and temperature."
+            ],
+            "C": [
+                false,
+                "Here we do not explore all temperature settings of interest and as such cannot consider temperature as fixed effect."
+            ],
+            "D": [
+                false,
+                "We explore values which are not part of the range of interest for the temperature..."
+            ],
+            "E": [
+                true,
+                "We have indeed three temperature settings which we explore and two light settings. We must ensure this coding is mapped to proper values, though."
+            ]
+            ,
+            "None of the above": [
+                false,
+                "Incorrect!"
+            ]
+        },
+        "multi-choice": true
+    }
+]
